@@ -1,3 +1,6 @@
+package Classe;
+import Utils.*;
+
 /**
  * Created by nani on 27/03/2017.
  */
@@ -17,6 +20,7 @@ public class Queen extends BaseAnt {
 
         int indexSoldat = 0;
         int indexChief = 0;
+        Log.i(Queen.class, "Création de la fourmilière avec "+chiefs+" Chefs");
 
         for (int i = 0; i < chiefs; i++) {
             Chief chief = new Chief(indexChief);
@@ -26,8 +30,6 @@ public class Queen extends BaseAnt {
                 Soldier soldat = new Soldier(indexSoldat, chief);
                 indexSoldat++;
             }
-
-
         }
     }
 

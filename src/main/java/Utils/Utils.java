@@ -1,3 +1,5 @@
+package Utils;
+
 import java.util.Random;
 
 /**
@@ -9,5 +11,12 @@ public class Utils {
         Random random = new Random();
         int randomNumber = random.nextInt(max + 1 - min) + min;
         return randomNumber;
+    }
+
+    public static Enum.FoodType getRandomFood() {
+        Random random = new Random();
+        int randomNumber = random.nextInt(Enum.FoodType.values().length);
+        return Enum.FoodType.values()[randomNumber];
+        //return FoodType.BREAD;
     }
 }

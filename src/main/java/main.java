@@ -1,33 +1,40 @@
+import Utils.Log;
+import Classe.Chief;
+import Classe.Queen;
+import Classe.Soldier;
+import Utils.Utils;
+
+import java.util.logging.Logger;
+
 /**
  * Created by nani on 27/03/2017.
  */
-public class main {
+public class Main {
+
+    private static final Logger Toto = Logger.getLogger( Main.class.getName() );
 
     public static void main(String[] args) {
 
-        System.out.println(100%3);
-        // Define a chief
+        Log.i(Main.class, "salut");
+
+        Log.i(Main.class, Utils.getRandomFood().toString());
+
         Chief chef = new Chief(0);
-
-        // Define a soldier
         Soldier soldat=new Soldier(0, chef);
-
         Queen queen = new Queen(0);
-
-        soldat.hatch(5);
-        chef.hatch(5);
-
 
         // Add an observer
         soldat.addObserver(chef);
         queen.addObserver(soldat);
+        queen.addObserver(chef);
 
         queen.sendPheromone();
 
-        //System.out.println("Avant mise à jour de l'etat du chef:\tChef: "+ chef);
+        Log.s(Main.class, "blah !!!");
+
         // Change soldier state
         soldat.setAlive(false);
-        System.out.println("Chef: "+ chef);
+
     }
 
     public void god() {

@@ -1,11 +1,13 @@
+package Classe;
+
 import java.awt.*;
-import java.text.SimpleDateFormat;
 import java.util.*;
+import Utils.*;
 
 /**
  * Created by nani on 27/03/2017.
  */
-public class BaseAnt extends Observable {
+public class BaseAnt extends Observable implements Runnable {
 
     private int id;
     private boolean alive;
@@ -45,7 +47,7 @@ public class BaseAnt extends Observable {
         this.lifetime--;
         if(this.lifetime < 1){
             setAlive(false);
-            System.out.println("la fourmis est morte !"+lifetime);
+            Log.i(BaseAnt.class, "la fourmis est morte !"+lifetime);
         }
     }
 
@@ -63,5 +65,9 @@ public class BaseAnt extends Observable {
 
     public int getRandMax() {
         return randMax;
+    }
+
+    public void run() {
+
     }
 }

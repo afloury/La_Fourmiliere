@@ -1,3 +1,6 @@
+package Classe;
+import Utils.*;
+
 import java.util.Observable;
 import java.util.Observer;
 
@@ -18,7 +21,7 @@ public class Soldier extends BaseAnt implements Observer {
         if (obs instanceof Queen) {
             int lifetime = Utils.getRandomLifeTime(getRandMin(), getRandMax());
             hatch(lifetime);
-            System.out.println("La fourmis : "+getId()+" éclos avec "+ getLifetime()+" point de vie !");
+            Log.i(Soldier.class, "La fourmis soldat : "+getId()+" éclos avec "+ getLifetime()+" point de vie !");
         }
     }
 
